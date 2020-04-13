@@ -5,8 +5,8 @@ in which operators precede their operands. It does not need any parentheses as l
 The description "Polish" refers to the nationality of logician Jan Łukasiewicz, who invented Polish notation in 1924.
 
 ## How it works?
-The infix expression ((15 / (7 − (1 + 1))) * 3) - (2 + (1 + 1)) can be written like this in reverse Polish notation:
-15 7 1 1 + / / 3 * 2 1 1 + + -
+The infix expression 12+2·(3·4+10/5) can be written like this in reverse Polish notation:
+12 2 3 4 * 10 5 / + * +
 
 
 ![12](https://user-images.githubusercontent.com/58864931/77236319-b05b8400-6bbd-11ea-8d49-c376afd900f1.png)
