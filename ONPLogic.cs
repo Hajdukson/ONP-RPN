@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ONP
 {
-    class ONPLogic
+    public class ONPLogic
     {
         List<string> listOfEwerything;
         List<double> listOfNumbers;
@@ -25,13 +23,13 @@ namespace ONP
                 {
                     double temporary = double.Parse(listOfEwerything[i]);
                     listOfNumbers.Add(temporary);
-                }
+                } 
         }
         private void AddToList(string str)
         {
             string[] elements = str.Split(' ');
-            for (int i = 0; i < elements.Length; i++)
-                listOfEwerything.Add(elements[i]);
+            foreach(string element in elements)
+                listOfEwerything.Add(element);
         }
         public double Calculator()
         {
@@ -65,6 +63,14 @@ namespace ONP
                 {
                     listOfEwerything.RemoveAt(i);
                     listOfNumbers[i - 2] /= listOfNumbers[i - 1];
+                    listOfNumbers.RemoveAt(i - 1);
+                    listOfEwerything.RemoveAt(i - 1);
+                    i = 0;
+                }
+                else if (listOfEwerything[i] == "^")
+                {
+                    listOfEwerything.RemoveAt(i);
+                    listOfNumbers[i - 2] = Math.Pow(listOfNumbers[i - 2] , listOfNumbers[i - 1]);
                     listOfNumbers.RemoveAt(i - 1);
                     listOfEwerything.RemoveAt(i - 1);
                     i = 0;
